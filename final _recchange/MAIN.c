@@ -10,15 +10,9 @@ int main( int argc, char ** argv ) {
 	node * root;
 	int input, range2;
 	char instruction;
-
-
-
 	root = NULL;
 	verbose_output = false;
-    printf("Welcome To Database Server");
-    int choice;
-    scanf("%d",&choice);
-if(choice == 1){
+    printf("Welcome To Database Server\n");
     usage_1();  
 	//usage_2();
 	printf("> ");
@@ -34,18 +28,12 @@ if(choice == 1){
 			print_tree(root);
 			break;
 		case 'i':
-
+			printf("Enter your MIS :");
 			scanf("%d", &input);
 			fflush(stdin);
 			printf("\nEnter your name:");
 			fflush(stdin);
-			scanf("%s",NAME);
-			//gets(NAME);
-   			//scanf("%[^\n]s",NAME); 
-			// gets(NAME);
-			// int length = strlen(NAME);
-			// char*A = (char*)malloc(sizeof(char)*length);
-
+			scanf("%s",&NAME);
 			printf("\nEnter the marks obtained:");
 			scanf("%d",&marks);
 			
@@ -56,6 +44,7 @@ if(choice == 1){
 		case 'p':
 			scanf("%d", &input);
 			find_and_print(root, input, instruction == 'p');
+			printf("\n");
 			break;
 		case 'r':
 			scanf("%d %d", &input, &range2);
@@ -69,15 +58,15 @@ if(choice == 1){
 		case 'l':
 			print_leaves(root);
 			break;
-		case 'q':
-			while (getchar() != (int)'\n');
-			return EXIT_SUCCESS;
+		// case 'q':
+		// 	while (getchar() != (int)'\n');
+		// 	return EXIT_SUCCESS;
 		case 't':
 			print_tree(root);
 			break;
-		case 'v':
-			verbose_output = !verbose_output;
-			break;
+		// case 'v':
+		// 	verbose_output = !verbose_output;
+		// 	break;
 		case 'x':
 			if (root)
 				root = destroy_tree(root);
@@ -93,6 +82,5 @@ if(choice == 1){
 	printf("\n");
 
 	return EXIT_SUCCESS;
-	}
 
 }

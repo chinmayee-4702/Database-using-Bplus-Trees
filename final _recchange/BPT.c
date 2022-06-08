@@ -20,10 +20,7 @@ void usage_1( void ) {
 	printf("To build a B+ tree of a different order, start again and enter the order\n");
 	printf("as an integer argument:  bpt <order>  ");
 	printf("(%d <= order <= %d).\n", MIN_ORDER, MAX_ORDER);
-	printf("To start with input from a file of newline-delimited integers, \n"
-			"start again and enter ");
-	// printf("the order followed by the filename:\n"
-	// 		"bpt <order> <inputfile> .\n");
+	
 }
 
 
@@ -31,18 +28,15 @@ void usage_1( void ) {
  */
 void usage_2( void ) {
 	printf("Enter any of the following commands after the prompt > :\n");
-	printf("\ti <k>  -- Insert <k> (an integer) as both key and value).\n");
-	printf("\tf <k>  -- Find the value under key <k>.\n");
-	// printf("\tp <k> -- Print the path from the root to key k and its associated value.\n");
-	// printf("\tr <k1> <k2> -- Print the keys and values found in the range "
-	// 		"[<k1>, <k2>\n");
-	// printf("\td <k>  -- Delete key <k> and its associated value.\n");
-	// printf("\tx -- Destroy the whole tree.  Start again with an empty tree of the same order.\n");
-	// printf("\tt -- Print the B+ tree.\n");
-	// printf("\tl -- Print the keys of the leaves (bottom row of the tree).\n");
-	// printf("\tv -- Toggle output of pointer addresses (\"verbose\") in tree and leaves.\n");
-	// printf("\tq -- Quit. (Or use Ctl-D.)\n");
-	// printf("\t? -- Print this help message.\n");
+	printf("\ti <k>  -- Insert command.\n");
+	printf("\tf <k>  -- Find the record under the key.\n");
+	printf("\tr <k1> <k2> -- Print the keys and values found in the range ""[<k1>, <k2>]\n");
+	printf("\td <k>  -- Delete Record\n");
+	printf("\tx -- Destroy the whole tree.  Start again with an empty tree of the same order.\n");
+	printf("\tt -- Print the B+ tree.\n");
+	printf("\tl -- Print the Linked List.\n");
+	printf("\tq -- Quit. (Or use Ctl-D.)\n");
+	printf("\t? -- Print this help message.\n");
 }
 
 
@@ -207,7 +201,7 @@ void find_and_print(node * root, int key, bool verbose) {
 	if (r == NULL)
 		printf("Record not found under key %d.\n", key);
 	else{
-		printf("Record at %lx -- key : %d\nMIS : %d\nMarks : %d\n",(unsigned long)r, key, r->MIS,r->marks);
+		printf("Record : \nMIS : %d\nMarks : %d\n", r->MIS,r->marks);
 		printf("Name : %s",r->name);
 	}
 }
