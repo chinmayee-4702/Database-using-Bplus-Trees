@@ -13,7 +13,9 @@ int main( int argc, char ** argv ) {
 	root = NULL;
 	verbose_output = false;
 	//char NAME[50];
+    
     printf("Welcome To Database Server\n");
+    printf("Chinmayee Kulkarni 112003074\n");
     usage_1();  
 	//usage_2();
 	printf("> ");
